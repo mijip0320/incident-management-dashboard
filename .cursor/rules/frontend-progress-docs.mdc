@@ -1,0 +1,51 @@
+---
+description: frontend 작업 시 docs 진행 상황을 실시간 갱신
+globs: frontend/**
+alwaysApply: false
+---
+
+# Frontend Progress Docs — 실시간 기록 규칙
+
+`frontend/` 코드 작업 시 `frontend/docs/` 문서를 **항상 함께** 갱신한다.
+
+## 필수 갱신 파일
+
+| 시점 | 파일 | 내용 |
+|------|------|------|
+| 작업 시작 | `docs/PROGRESS.md` | 현재 스텝 → `in_progress`, 마지막 업데이트 날짜 |
+| 작업 시작 | `docs/SESSION_LOG.md` | 최상단에 시작 로그 추가 |
+| 작업 시작 | `docs/steps/step-XX-*.md` | 상태 `in_progress`, 시작일 기록 |
+| 작업 중 | `docs/steps/step-XX-*.md` | 체크리스트·구현 상세·변경 파일·메모 |
+| 작업 완료 | `docs/PROGRESS.md` | 스텝 `completed`, 진행률, 다음 작업 갱신 |
+| 작업 완료 | `docs/SESSION_LOG.md` | 완료 로그 (변경 파일, 완료 기준 체크) |
+| 작업 완료 | `docs/steps/step-XX-*.md` | 상태 `completed`, 완료일, 완료 기준 `[x]` |
+
+## 스텝 번호 매핑
+
+1=project-setup, 2=common-layout, 3=types-and-mocks, 4=dashboard, 5=services,
+6=incident-list, 7=incident-detail, 8=create-incident, 9=mock-realtime,
+10=postmortem, 11=ux-polish, 12=backend-prep
+
+## SESSION_LOG 형식
+
+```markdown
+## YYYY-MM-DD — Step N: 제목
+
+**스텝:** Step N
+**상태:** in_progress | completed | blocked
+
+### 작업 내용
+- ...
+
+### 변경 파일
+- ...
+
+### 완료 기준 확인 (완료 시)
+- [x] ...
+```
+
+## 주의
+
+- 코드 변경만 하고 docs 미갱신 금지
+- `FRONTEND_PLAN.md` 체크포인트 질문 전 docs 완료 상태 반영
+- docs-only 변경(이력 보정)도 SESSION_LOG에 기록

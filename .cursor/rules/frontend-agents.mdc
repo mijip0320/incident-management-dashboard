@@ -1,0 +1,11 @@
+---
+description: frontend 코딩 규칙 — AGENTS.md 준수
+globs: frontend/**
+alwaysApply: false
+---
+
+# Frontend AGENTS.md
+
+`frontend/` 작업 전 [`frontend/AGENTS.md`](../../frontend/AGENTS.md)를 따른다.
+
+핵심: FSD 구조, 화살표 함수 컴포넌트, TanStack Query hook으로 API, Zustand 클라이언트 상태, Tailwind 토큰(shadcn), mutation toast(Sonner + BE message).
