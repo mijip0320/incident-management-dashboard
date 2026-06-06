@@ -1,0 +1,89 @@
+# =============================================================================
+# Incident Management Dashboard — root .gitignore
+# Applies to: frontend/, backend/, monitor-agent/, services/
+# =============================================================================
+
+# --- OS ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# --- Dependencies ---
+node_modules/
+
+# --- Build & compile output ---
+dist/
+build/
+out/
+.next/
+.nuxt/
+*.tsbuildinfo
+
+# --- Vite ---
+.vite/
+
+# --- Environment & secrets ---
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# --- Logs ---
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# --- Test & coverage ---
+coverage/
+.nyc_output/
+*.lcov
+
+# --- Caches ---
+.cache/
+.parcel-cache/
+.turbo/
+.eslintcache
+.stylelintcache
+*.swp
+*.swo
+*~
+
+# --- IDE & editors ---
+.idea/
+*.iml
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+*.sublime-project
+*.sublime-workspace
+
+# --- Prisma ---
+# Keep schema and migrations; ignore local DB artifacts only.
+
+# --- Supabase (local dev) ---
+.supabase/
+supabase/.branches/
+supabase/.temp/
+
+# --- Docker (local volumes / generated data) ---
+docker-data/
+.docker/
+
+# --- MSW (generated service worker, if auto-generated) ---
+public/mockServiceWorker.js
+
+# --- Misc ---
+*.local
+.vercel/
+.netlify/

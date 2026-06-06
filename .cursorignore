@@ -1,0 +1,66 @@
+# =============================================================================
+# Incident Management Dashboard — root .cursorignore
+# Applies to: frontend/, backend/, monitor-agent/, services/
+# Excluded paths are not indexed by Cursor (improves AI context & performance).
+# =============================================================================
+
+# --- Git ---
+.git/
+
+# --- Dependencies (large, rarely useful for AI context) ---
+node_modules/
+
+# --- Build & compile output ---
+dist/
+build/
+out/
+.next/
+.nuxt/
+*.tsbuildinfo
+.vite/
+
+# --- Lock files (large, low signal for code assistance) ---
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+bun.lock
+bun.lockb
+
+# --- Environment & secrets ---
+.env
+.env.*
+
+# --- Logs ---
+logs/
+*.log
+
+# --- Test & coverage ---
+coverage/
+.nyc_output/
+
+# --- Caches ---
+.cache/
+.parcel-cache/
+.turbo/
+.eslintcache
+.stylelintcache
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- Supabase (local dev artifacts) ---
+.supabase/
+supabase/.branches/
+supabase/.temp/
+
+# --- Docker (local data) ---
+docker-data/
+.docker/
+
+# --- IDE ---
+.idea/
+
+# --- Deploy / hosting ---
+.vercel/
+.netlify/
