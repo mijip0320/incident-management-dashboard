@@ -1,8 +1,8 @@
-import { PageShell } from '@/shared/layouts/PageShell';
+import { PageContainer } from '@/shared/layouts/PageContainer';
 
 export const SettingsPage = () => {
   return (
-    <PageShell
+    <PageContainer
       title="Settings"
       description="데모 사용자, 팀, 환경 설정을 관리합니다."
     />

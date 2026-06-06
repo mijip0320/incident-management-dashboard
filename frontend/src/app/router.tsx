@@ -1,5 +1,6 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import { RouteBoundary } from '@/app/RouteBoundary';
+import { AppLayout } from '@/shared/layouts/AppLayout';
 import { ROUTES } from '@/shared/constants/routes';
 import { lazyPage } from '@/shared/lib/lazy-page';
 
@@ -42,44 +43,49 @@ export const router = createBrowserRouter([
     ),
   },
   {
-    path: ROUTES.dashboard,
-    element: (
-      <RouteBoundary>
-        <DashboardPage />
-      </RouteBoundary>
-    ),
-  },
-  {
-    path: ROUTES.incidents,
-    element: (
-      <RouteBoundary>
-        <IncidentsPage />
-      </RouteBoundary>
-    ),
-  },
-  {
-    path: ROUTES.services,
-    element: (
-      <RouteBoundary>
-        <ServicesPage />
-      </RouteBoundary>
-    ),
-  },
-  {
-    path: ROUTES.postmortems,
-    element: (
-      <RouteBoundary>
-        <PostmortemsPage />
-      </RouteBoundary>
-    ),
-  },
-  {
-    path: ROUTES.settings,
-    element: (
-      <RouteBoundary>
-        <SettingsPage />
-      </RouteBoundary>
-    ),
+    element: <AppLayout />,
+    children: [
+      {
+        path: ROUTES.dashboard,
+        element: (
+          <RouteBoundary>
+            <DashboardPage />
+          </RouteBoundary>
+        ),
+      },
+      {
+        path: ROUTES.incidents,
+        element: (
+          <RouteBoundary>
+            <IncidentsPage />
+          </RouteBoundary>
+        ),
+      },
+      {
+        path: ROUTES.services,
+        element: (
+          <RouteBoundary>
+            <ServicesPage />
+          </RouteBoundary>
+        ),
+      },
+      {
+        path: ROUTES.postmortems,
+        element: (
+          <RouteBoundary>
+            <PostmortemsPage />
+          </RouteBoundary>
+        ),
+      },
+      {
+        path: ROUTES.settings,
+        element: (
+          <RouteBoundary>
+            <SettingsPage />
+          </RouteBoundary>
+        ),
+      },
+    ],
   },
   {
     path: '*',

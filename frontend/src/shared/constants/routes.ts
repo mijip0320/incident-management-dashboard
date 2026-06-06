@@ -1,3 +1,5 @@
+import type { NavIconName } from '@/shared/layouts/NavIcon';
+
 export const ROUTES = {
   root: '/',
   login: '/login',
@@ -8,10 +10,14 @@ export const ROUTES = {
   settings: '/settings',
 } as const;
 
-export const NAV_ITEMS = [
-  { to: ROUTES.dashboard, label: 'Dashboard' },
-  { to: ROUTES.incidents, label: 'Incidents' },
-  { to: ROUTES.services, label: 'Services' },
-  { to: ROUTES.postmortems, label: 'Postmortems' },
-  { to: ROUTES.settings, label: 'Settings' },
-] as const;
+export const NAV_ITEMS: ReadonlyArray<{
+  to: (typeof ROUTES)[keyof typeof ROUTES];
+  label: string;
+  icon: NavIconName;
+}> = [
+  { to: ROUTES.dashboard, label: 'Dashboard', icon: 'dashboard' },
+  { to: ROUTES.incidents, label: 'Incidents', icon: 'incidents' },
+  { to: ROUTES.services, label: 'Services', icon: 'services' },
+  { to: ROUTES.postmortems, label: 'Postmortems', icon: 'postmortems' },
+  { to: ROUTES.settings, label: 'Settings', icon: 'settings' },
+];

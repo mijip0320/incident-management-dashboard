@@ -4,7 +4,32 @@
 
 ---
 
-## 2026-06-06 — AGENTS.md 규칙 준수 감사 및 수정
+## 2026-06-06 — Step 2: 공통 레이아웃 구현
+
+**스텝:** Step 2  
+**상태:** completed
+
+### 작업 내용
+
+- AppLayout, Sidebar, Header, PageContainer 구현
+- NavLink 기반 active 메뉴 표시
+- Mobile sidebar drawer (Zustand `useLayoutStore`)
+- Router nested layout 적용 (login 제외)
+- PageShell → PageContainer 마이그레이션
+
+### 변경 파일
+
+- `src/shared/layouts/{AppLayout,Sidebar,Header,PageContainer,NavIcon}.tsx`
+- `src/shared/model/useLayoutStore.ts`
+- `src/app/router.tsx`, `src/pages/**/*.tsx`
+
+### 완료 기준 확인
+
+- [x] 모든 주요 페이지로 이동 가능
+- [x] 선택된 메뉴 active 표시
+- [x] 반응형 최소 대응
+
+---
 
 **스텝:** — (품질)  
 **상태:** completed

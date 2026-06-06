@@ -55,6 +55,9 @@
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
+
+  /* Layout */
+  --width-sidebar: 16rem;
 }
 
 @layer base {
