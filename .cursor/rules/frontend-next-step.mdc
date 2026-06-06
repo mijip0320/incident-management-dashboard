@@ -1,0 +1,48 @@
+---
+description: "다음 단계 진행" 요청 시 PROGRESS.md 기준으로 frontend 스텝 자동 실행
+alwaysApply: true
+---
+
+# Frontend — 다음 단계 자동 진행
+
+## 트리거 (유사 표현 포함)
+
+사용자가 아래와 **비슷한 의도**로 요청하면 이 규칙을 따른다.
+
+- "다음 단계 진행해줘" / "다음 단계로 진행" / "계속 진행"
+- "응 진행해줘" / "예, 진행" (직전 체크포인트 직후)
+- "next step" / "proceed" / "continue"
+
+## 필수 워크플로 (순서 고정)
+
+1. **먼저 읽기** — `frontend/docs/PROGRESS.md`
+   - `현재 스텝` / `다음 작업` / 스텝별 상태 테이블 확인
+   - `pending` 또는 `in_progress`인 **가장 앞 스텝**이 대상
+2. **상세 스펙** — `frontend/docs/steps/step-XX-*.md` + `incident-project-plan/frontend/FRONTEND_PLAN.md` 해당 Step 섹션
+3. **코딩 규칙** — `frontend/AGENTS.md` 준수
+4. **구현 실행** — 확인 질문 없이 해당 스텝 **전체** 구현 (완료 기준 충족까지)
+5. **문서 갱신** — `.cursor/rules/frontend-progress-docs.mdc` 규칙대로 `PROGRESS.md`, `SESSION_LOG.md`, `steps/` 갱신
+6. **검증** — `npm run build` · `npm run lint` (frontend/)
+7. **체크포인트** — FRONTEND_PLAN 형식으로 완료 보고 + 다음 스텝 진행 여부 질문
+
+## 스텝 결정 규칙
+
+| PROGRESS.md 상태 | 행동 |
+|------------------|------|
+| Step N `in_progress` | Step N 마무리 |
+| Step N `pending` (이전 스텝 completed) | Step N 시작 |
+| Step N `blocked` | blocked 사유 확인 후 사용자에게 1회만 확인 |
+| 모든 스텝 `completed` | 완료 안내, 추가 작업 제안 |
+
+## 체크포인트 질문 형식 (스텝 완료 후)
+
+```txt
+Step N {제목}을 완료했습니다.
+다음 단계(Step N+1: {다음 제목})로 진행할까요? 예/아니오
+```
+
+## 주의
+
+- PROGRESS.md를 읽지 않고 추측으로 스텝 진행 금지
+- 스텝 범위 밖 작업(다른 스텝 선행) 금지 — 예외: 현재 스텝 완료에 필수인 공통 인프라
+- 사용자가 특정 Step 번호를 명시하면 PROGRESS.md보다 **사용자 지정** 우선

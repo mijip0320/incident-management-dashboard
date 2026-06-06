@@ -374,6 +374,14 @@ export class ApiError extends Error {
 `frontend/` 코드 작업 시 [`docs/PROGRESS.md`](./docs/PROGRESS.md) 및 [`docs/SESSION_LOG.md`](./docs/SESSION_LOG.md)를 **반드시** 함께 갱신한다.  
 상세 규칙: `.cursor/rules/frontend-progress-docs.mdc`
 
+### "다음 단계 진행" 요청 시
+
+"다음 단계 진행해줘", "응 진행해줘", "계속 진행" 등 → **먼저 `docs/PROGRESS.md`를 읽고** pending/in_progress 스텝을 구현한다.
+
+워크플로: PROGRESS.md → steps/step-XX-*.md → FRONTEND_PLAN → AGENTS.md → 구현 → docs 갱신 → build/lint → 체크포인트 질문
+
+Cursor 규칙: `.cursor/rules/frontend-next-step.mdc`
+
 ---
 
 ## Quick Reference — DO / DON'T

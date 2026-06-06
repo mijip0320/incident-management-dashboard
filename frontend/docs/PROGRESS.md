@@ -38,3 +38,5 @@ Step 5(Services 화면)가 완료되었습니다.
 Step 5 Services 화면 구현을 완료했습니다.
 다음 단계로 진행할까요? 예/아니오
 ```
+
+> **AI 참고:** "다음 단계 진행해줘" / "응 진행해줘" 등 → 이 파일을 읽고 Step 6부터 진행 (`.cursor/rules/frontend-next-step.mdc`)

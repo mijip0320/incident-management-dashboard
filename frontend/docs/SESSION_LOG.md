@@ -4,7 +4,17 @@
 
 ---
 
-## 2026-06-06 — shadcn/ui 초기화 및 Tailwind 연동 재설정
+## 2026-06-06 — "다음 단계 진행" Cursor 규칙 설정
+
+**스텝:** — (인프라)  
+**상태:** completed
+
+### 작업 내용
+
+- `.cursor/rules/frontend-next-step.mdc` 추가 (alwaysApply)
+- `frontend/docs/README.md`, `AGENTS.md`, `PROGRESS.md`에 워크플로 문서화
+
+---
 
 **스텝:** — (인프라)  
 **상태:** completed
