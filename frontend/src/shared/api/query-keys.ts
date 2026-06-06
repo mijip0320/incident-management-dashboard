@@ -5,7 +5,7 @@ export const queryKeys = {
   },
   incidents: {
     all: ['incidents'] as const,
-    list: (filters?: Record<string, unknown>) =>
+    list: (filters?: unknown) =>
       [...queryKeys.incidents.all, 'list', filters] as const,
     detail: (id: string) =>
       [...queryKeys.incidents.all, 'detail', id] as const,

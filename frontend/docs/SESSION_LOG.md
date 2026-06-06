@@ -4,7 +4,83 @@
 
 ---
 
-## 2026-06-06 — Step 2: 공통 레이아웃 구현
+## 2026-06-06 — shadcn/ui 초기화 및 Tailwind 연동 재설정
+
+**스텝:** — (인프라)  
+**상태:** completed
+
+### 배경
+
+`FRONTEND_PLAN.md` 기술 스택에 shadcn/ui가 명시되어 있으나, 실제로는 Tailwind만 사용 중이었음.
+
+### 작업 내용
+
+- `npx shadcn@latest init -t vite -b radix -p nova` 실행
+- `components.json` aliases → FSD 경로 (`@/shared/components/ui`, `@/shared/lib/utils`)
+- shadcn 컴포넌트 추가: button, card, badge, sheet, skeleton, table, separator
+- `globals.css` shadcn CSS 변수 + 커스텀 토큰(severity/status) 통합
+- `index.html`에 `class="dark"` 적용
+- 기존 Card/Drawer/Skeleton/Badge → shadcn 기반으로 마이그레이션
+
+### 패키지 추가
+
+- `class-variance-authority`, `tailwind-merge`, `lucide-react`, `radix-ui`, `@fontsource-variable/geist`, `tw-animate-css`
+
+---
+
+**스텝:** Step 5  
+**상태:** completed
+
+### 작업 내용
+
+- ServicesTable (상태/latency/last checked/failures/incidents)
+- ServiceDetailDrawer (View Details)
+- shared Drawer 컴포넌트 추가
+
+### 완료 기준 확인
+
+- [x] Service A/B/C 상태 명확 표시
+- [x] Operational / Degraded / Down 구분
+
+---
+
+**스텝:** Step 4  
+**상태:** completed
+
+### 작업 내용
+
+- Summary Cards, Service Health Cards, Active Incidents, 차트 2종, Recent Timeline 구현
+- `useDashboardSummaryQuery` 기반 mock data 렌더링
+- Recharts + date-fns 추가, entity badge 컴포넌트 생성
+
+### 완료 기준 확인
+
+- [x] 운영 대시보드처럼 보이는 메인 화면 완성
+- [x] mock data 기반으로 렌더링
+
+---
+
+**스텝:** Step 3  
+**상태:** completed
+
+### 작업 내용
+
+- Entity별 도메인 타입 정의 (user, team, service, incident, postmortem, dashboard)
+- mock data 생성 (users, services, incidents, timeline, postmortems, dashboard summary)
+- entity api 함수 + TanStack Query hook 구성 (Option A local mock)
+
+### 변경 파일
+
+- `entities/**/model/types.ts`, `mock-*.ts`
+- `entities/**/api/*.api.ts`, `use*Query.ts`
+- `shared/lib/mock-delay.ts`
+
+### 완료 기준 확인
+
+- [x] 모든 화면에서 사용할 수 있는 mock data 존재
+- [x] 타입 오류 없음 (`npm run build` 통과)
+
+---
 
 **스텝:** Step 2  
 **상태:** completed

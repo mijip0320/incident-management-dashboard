@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ROUTES } from '@/shared/constants/routes';
+import { Button } from '@/shared/components/ui/button';
 
 export const LoginPage = () => {
   return (
@@ -21,12 +22,9 @@ export const LoginPage = () => {
           데모 로그인 화면은 추후 구현 예정입니다.
         </p>
 
-        <Link
-          to={ROUTES.dashboard}
-          className="mt-6 inline-flex w-full items-center justify-center rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition hover:bg-accent"
-        >
-          Dashboard로 이동 (Demo)
-        </Link>
+        <Button asChild className="mt-6 w-full">
+          <Link to={ROUTES.dashboard}>Dashboard로 이동 (Demo)</Link>
+        </Button>
       </div>
     </div>
   );

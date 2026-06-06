@@ -279,9 +279,13 @@ export const useIncidentFilterStore = create<IncidentFilterState>((set) => ({
 
 ### shadcn/ui
 
-- 컴포넌트 추가: `npx shadcn@latest add button card badge ...`
+- **설치됨**: `components.json` (style: `radix-nova`, icon: `lucide`)
+- 컴포넌트 추가: `npx shadcn@latest add button card badge ... -y`
 - shadcn 컴포넌트 위치: `src/shared/components/ui/`
-- shadcn CSS 변수는 `globals.css` 토큰과 **동기화** 유지
+- 유틸: `src/shared/lib/utils.ts` (`cn()` = clsx + tailwind-merge)
+- **주의**: CLI가 `@/` 폴더에 생성할 경우 `src/shared/`로 이동 필요
+- 테마: `index.html`에 `class="dark"`, `globals.css` CSS 변수 + 커스텀 토큰(severity, status)
+- shadcn CSS 변수는 `globals.css`의 `:root` / `.dark`와 **동기화** 유지
 
 ---
 
